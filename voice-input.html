@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InterviewMate | Voice Input</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .voice-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #2c3e50;
+      border-radius: 10px;
+      color: white;
+      text-align: center;
+    }
+    
+    #voiceStatus {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      min-height: 2rem;
+    }
+    
+    #transcriptDisplay {
+      background: #34495e;
+      min-height: 150px;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      text-align: left;
+      border: 1px solid #3d566e;
+    }
+    
+    #voiceInputBtn {
+      background: #e74c3c;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin: 1rem 0;
+    }
+    
+    #voiceInputBtn:hover {
+      background: #c0392b;
+      transform: scale(1.05);
+    }
+    
+    #voiceInputBtn.listening {
+      animation: pulse 1.5s infinite;
+      background: #27ae60;
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(39, 174, 96, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+    }
+    
+    .language-select {
+      padding: 0.5rem;
+      border-radius: 5px;
+      background: #34495e;
+      color: white;
+      border: 1px solid #3d566e;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="voice-container">
+    <h1>Voice Input Mode</h1>
+    <p>Answer interview questions using your voice</p>
+    
+    <select id="languageSelect" class="language-select">
+      <option value="en-US">English (US)</option>
+      <option value="en-GB">English (UK)</option>
+      <option value="es-ES">Spanish</option>
+      <option value="fr-FR">French</option>
+      <option value="de-DE">German</option>
+    </select>
+    
+    <div id="voiceStatus">Press the button to start speaking</div>
+    
+    <button id="voiceInputBtn">🎤 Start Voice Input</button>
+    
+    <div id="transcriptDisplay" contenteditable="true">
+      Your transcribed text will appear here...
+    </div>
+    
+    <div class="action-buttons">
+      <button id="copyTextBtn" class="secondary-btn">📋 Copy Text</button>
+      <button id="clearTextBtn" class="secondary-btn">🗑️ Clear Text</button>
+      <button id="saveTextBtn" class="primary-btn">💾 Save to Interview</button>
+    </div>
+  </div>
+
+  <script src="js/voice-input.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "Software Developer": [
+    "Tell me about a challenging coding problem you solved.",
+    "How do you ensure code quality in your work?",
+    "What is your experience with version control systems like Git?"
+  ],
+  "UI/UX Designer": [
+    "Walk me through your design process.",
+    "How do you handle feedback on your designs?",
+    "What tools do you use for prototyping and wireframing?"
+  ],
+  "Project Manager": [
+    "How do you prioritize tasks in a tight deadline?",
+    "Tell me about a project that didn’t go as planned.",
+    "How do you communicate progress to stakeholders?"
+  ]
+}

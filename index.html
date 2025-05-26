@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>InterviewMate | AI Interview Assistant</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Entry Screen -->
+  <div id="entryScreen">
+    <h1>🚀 LET'S START THE INTERVIEW</h1>
+    <button id="enterButton"><span>🚀</span> Launch InterviewMate</button>
+    <div class="video-platforms">
+      <img src="images/google_meet.png" alt="Google Meet">
+      <img src="images/teams.png" alt="Microsoft Teams">
+      <img src="images/zoom.png" alt="Zoom">
+    </div>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="main-layout" style="display: none;">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <h3>Main Features</h3>
+      <!-- Change this button in your sidebar -->
+      <button id="voiceInputBtn" onclick="window.location.href='ai-interview.html'">
+  🎤 AI Interview Practice</button>
+      <button id="videoInterviewBtn" onclick="window.location.href='video-interview.html'">📹 Video Interview Practice</button>
+      <button id="aiEvaluationBtn">🧠 AI Evaluation</button>
+      <button id="roleQuestionsBtn">💼 Role-Based Questions</button>
+      <button id="summaryReportBtn">📊 Summary Report</button>
+      <button id="progressTrackingBtn">🏆 Progress Tracking</button>
+
+      <h3>Bonus Tools</h3>
+      <button id="practiceQuestionsBtn">📝 Practice Questions</button>
+      <button id="retakeInterviewBtn">🔄 Retake Interview</button>
+      <button id="sampleInterviewsBtn">🎥 Sample Interviews</button>
+      <button id="downloadReportBtn">📁 Download Report</button>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area">
+      <header class="site-header">
+        <div class="container">
+          <h1>InterviewMate</h1>
+          <p>Your AI-powered virtual mock interview coach</p>
+        </div>
+      </header>
+
+      <!-- Features Section -->
+      <section id="features" class="section">
+        <div class="container">
+          <h2>Key Features</h2>
+          <ul>
+            <li>🎤 Voice input with speech-to-text transcription</li>
+            <li>📹 Video interview practice with recording</li>
+            <li>🧠 AI evaluation: tone, clarity, relevance</li>
+            <li>💼 Role-based customized questions</li>
+            <li>📊 Summary report with feedback</li>
+            <li>🏆 Gamified progress tracking</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Interview Section -->
+      <section id="interview" class="section">
+        <div class="container">
+          <h2>Start Your Interview</h2>
+          <label for="roleSelect"><strong>Select Job Role:</strong></label>
+          <select id="roleSelect" onchange="loadQuestions()">
+            <option value="">-- Choose a Role --</option>
+            <option value="Software Developer">Software Developer</option>
+            <option value="UI/UX Designer">UI/UX Designer</option>
+            <option value="Project Manager">Project Manager</option>
+          </select>
+
+          <div id="progressTracker"></div>
+          <div id="progressBarContainer">
+            <div id="progressBar"></div>
+          </div>
+
+          <div id="questionBox" style="margin-top: 1rem;"></div>
+
+          <button id="startListeningBtn">🎤 Start Answering</button>
+          <p><strong>Transcript:</strong> <span id="transcript">[waiting for input]</span></p>
+
+          <button id="analyzeAnswerBtn">📨 Analyze Answer</button>
+          <div id="feedback"></div>
+
+          <button id="nextQuestionBtn" onclick="showNextQuestion()" style="display:none;">Next Question ➡️</button>
+
+          <div id="downloadSummaryContainer" style="display: none; margin-top: 1rem;">
+            <button class="btn btn--primary" onclick="downloadSummary()">Download Summary</button>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <footer class="site-footer">
+        <div class="container">
+          <p>&copy; 2025 InterviewMate. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  
+
+</body>
+</html>

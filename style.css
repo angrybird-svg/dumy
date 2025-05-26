@@ -1,0 +1,375 @@
+/* Base Styles */
+:root {
+  --primary: #3498db;
+  --secondary: #2c3e50;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --light: #ecf0f1;
+  --dark: #2c3e50;
+  --gray: #95a5a6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Entry Screen */
+#entryScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: white;
+  z-index: 100;
+  text-align: center;
+}
+
+#entryScreen h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease;
+}
+
+#launchBtn {
+  background-color: var(--success);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#launchBtn:hover {
+  background-color: #27ae60;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.video-platforms {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.video-platforms img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.video-platforms img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Main Layout */
+#mainLayout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--secondary);
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar h3 {
+  margin-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar button, .sidebar select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  text-align: left;
+}
+
+.sidebar button:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.sidebar select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5rem;
+}
+
+.content-area {
+  flex: 1;
+  padding: 2rem;
+}
+
+header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  color: var(--secondary);
+  font-size: 2.5rem;
+}
+
+header p {
+  color: var(--gray);
+}
+
+/* Interview Section */
+#interviewSection {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#progressTracker {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+#progressBarContainer {
+  height: 8px;
+  background-color: #eee;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+#questionBox {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  min-height: 80px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.controls button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+#startListeningBtn {
+  background-color: var(--primary);
+  color: white;
+}
+
+#startListeningBtn:hover {
+  background-color: #2980b9;
+}
+
+#analyzeAnswerBtn {
+  background-color: var(--success);
+  color: white;
+}
+
+#analyzeAnswerBtn:hover {
+  background-color: #27ae60;
+}
+
+#transcript {
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  min-height: 100px;
+  border: 1px solid #ddd;
+}
+
+#feedbackContainer {
+  padding: 1rem;
+  background-color: #e8f4fc;
+  border-radius: 5px;
+  border-left: 4px solid var(--primary);
+  margin-bottom: 1rem;
+}
+
+#nextQuestionBtn {
+  background-color: var(--secondary);
+  color: white;
+  margin-top: 1rem;
+}
+
+#nextQuestionBtn:hover {
+  background-color: #1a252f;
+}
+
+/* Video Interview Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+#videoPrompt h2 {
+  margin-bottom: 2rem;
+}
+
+#videoCountdown {
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.video-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+#liveVideo, #recordedVideo {
+  width: 100%;
+  max-height: 500px;
+  background: #000;
+  border-radius: 5px;
+}
+
+#videoTimer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.video-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.video-controls button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.progress-container {
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#videoProgressBar {
+  height: 100%;
+  width: 0%;
+  background-color: var(--primary);
+}
+
+.primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.danger {
+  background-color: var(--danger);
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #mainLayout {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .content-area {
+    padding: 1rem;
+  }
+}
+#videoInterviewBtn {
+  background-color: #9b59b6;
+  color: white;
+}
+
+#videoInterviewBtn:hover {
+  background-color: #8e44ad;
+}
